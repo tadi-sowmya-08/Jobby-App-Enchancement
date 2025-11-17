@@ -1,0 +1,148 @@
+.retry-button {
+  background-color: #6366f1;
+  color: #ffffff;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+}
+.failure-image {
+  width: 600px;
+  height: 600px;
+}
+.failure-con {
+  color: #ffffff;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.bg-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.bg-data {
+  padding: 15px;
+  background-color: #272727;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  width:85vw;
+}
+.first-part {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.second-part {
+  display: flex;
+  flex-direction: column;
+}
+.rating {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.company-logo {
+  margin-right: 8px;
+  width: 75px;
+  height: 75px;
+}
+.star {
+  color: #fbbf24;
+  margin-right: 20px;
+}
+.icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.icons-data {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 8px;
+}
+.location {
+  margin-right: 6px;
+  color: #475569;
+}
+.card-hr2 {
+  border: 2px solid #64748b;
+  width: 80vw;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.description-part {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.visit-button {
+  color: #6366f1;
+  border: none;
+  background-color: transparent;
+}
+.skillConatiner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.skill-list {
+  list-style-type: none;
+}
+.listItem2 {
+  display: flex;
+  margin-right: 35px;
+}
+.skill-image {
+  width: 50px;
+  height: 50px;
+  margin-right: 20px;
+}
+.life-at-comapany {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.life-logo {
+  width: 250px;
+  height: 250px;
+}
+.similar-jobs {
+  display: flex;
+  flex-direction: row;
+}
+.jobs-container2 {
+  display: flex;
+  flex-direction: column;
+
+  background-color: #272727;
+  padding: 15px;
+  color: #ffffff;
+  width: 25vw;
+  margin-right: 15px;
+  border-radius: 10px;
+}
+.company-logo2 {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+}
+.job-container3 {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  background-color: #000000;
+  font-weight: bold;
+  color: #ffffff;
+  background-size: cover;
+  font-family: "roboto";
+}
+p {
+  color: #f1f5f9;
+}

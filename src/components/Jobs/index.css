@@ -1,0 +1,146 @@
+.Jobs-Container {
+  display: flex;
+  flex-direction: column;
+}
+.jobs-inner-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #000000;
+  padding: 15px;
+  color: #ffffff;
+}
+.profile-Container {
+  display: flex;
+  flex-direction: column;
+  width: 21vw;
+  margin-right: 15px;
+}
+.seach-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  width: 78vw;
+}
+.hr-element {
+  border: 2px solid #64748b;
+  width: 21vw;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.input-search {
+  background-color: transparent;
+  border: none;
+  width: 400px;
+  outline: none;
+  color: #cbd5e1;
+  font-weight: bold;
+}
+.search-data {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid #b6c5ff;
+  border-radius: 8px;
+  width: 400px;
+  height: 40px;
+  margin-left: 30px;
+}
+.search-button {
+  background-color: #272727;
+  color: #ffffff;
+  width: 40px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.retry-button {
+  background-color: #6366f1;
+  color: #ffffff;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+}
+.failure-image {
+  width: 600px;
+  height: 600px;
+}
+.failure-con {
+  color: #ffffff;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.ulConatiner {
+  display: flex;
+  flex-direction: column;
+}
+.jobItem {
+  background-color: #272727;
+  color: #ffffff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 60vw;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.first-part {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.second-part {
+  display: flex;
+  flex-direction: column;
+}
+.rating {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.company-logo {
+  margin-right: 8px;
+  width: 75px;
+  height: 75px;
+}
+.star {
+  color: #fbbf24;
+  margin-right: 20px;
+}
+.icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.icons-data {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 8px;
+}
+.location {
+  margin-right: 6px;
+  color: #475569;
+}
+.card-hr {
+  border: 2px solid #64748b;
+  width: 58vw;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; /* span across the page */
+  z-index: 1000; /* stay above other elements */
+}
+.data {
+  display: flex;
+  flex-direction: row;
+}
+.id-link {
+  text-decoration: none;
+}

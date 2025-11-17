@@ -1,0 +1,12 @@
+.employement-typeCon {
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+}
+li {
+  list-style-type: none;
+  margin-bottom: 8px;
+}
+label {
+  margin-left: 12px;
+}
