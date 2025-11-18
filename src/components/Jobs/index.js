@@ -20,6 +20,14 @@ const status = {
   noJob: 'NOJOB',
 }
 
+const locationsList = [
+  {label: 'Hyderabad', locationId: 'HYDERABAD'},
+  {label: 'Bangalore', locationId: 'BANGALORE'},
+  {label: 'Chennai', locationId: 'CHENNAI'},
+  {label: 'Delhi', locationId: 'DELHI'},
+  {label: 'Mumbai', locationId: 'MUMBAI'},
+]
+
 class Jobs extends Component {
   state = {
     selectedEmployeeList: [],
@@ -27,6 +35,7 @@ class Jobs extends Component {
     jobList: [],
     searchInput: '',
     apiStatus: status.initial,
+    selectedLocations: [],
   }
 
   componentDidMount() {
@@ -59,9 +68,11 @@ class Jobs extends Component {
 
   getJobsApiCall = () => {
     const {searchInput, selectedSalaryRange, selectedEmployeeList} = this.state
+
     const employeryQuery = selectedEmployeeList.join(',')
     const salaryQuery = selectedSalaryRange
     const searchQuery = searchInput
+
     return `https://apis.ccbp.in/jobs?employment_type=${employeryQuery}&minimum_package=${salaryQuery}&search=${searchQuery}`
   }
 
@@ -88,10 +99,21 @@ class Jobs extends Component {
         rating: eachItem.rating,
         title: eachItem.title,
       }))
-      if (data.jobs.length === 0) {
+
+      const {selectedLocations} = this.state
+
+      // Apply location filtering manually
+      let finalList = updateList
+      if (selectedLocations.length > 0) {
+        finalList = updateList.filter(job =>
+          selectedLocations.includes(job.location),
+        )
+      }
+
+      if (finalList.length === 0) {
         this.setState({jobList: [], apiStatus: status.noJob})
       } else {
-        this.setState({jobList: updateList, apiStatus: status.success})
+        this.setState({jobList: finalList, apiStatus: status.success})
       }
     } else {
       this.setState({apiStatus: status.failure})
@@ -210,7 +232,7 @@ class Jobs extends Component {
     const {selectedEmployeeList, searchInput} = this.state
     return (
       <div className="Jobs-Container">
-        <Header className="header" />
+        <Header />
         <div className="jobs-inner-container">
           <div className="profile-Container">
             <Profile />
@@ -223,6 +245,39 @@ class Jobs extends Component {
             <hr className="hr-element" />
 
             <SalaryRange handleChange={this.handleSalaryChange} />
+            <hr className="hr-element" />
+
+            <h1 className="location-filter-heading">Locations</h1>
+            <ul className="location-container">
+              {locationsList.map(each => (
+                <li className="location-list" key={each.locationId}>
+                  <input
+                    type="checkbox"
+                    id={each.locationId}
+                    value={each.label}
+                    className="location-filter-input"
+                    onChange={e => {
+                      const {checked, value} = e.target
+                      this.setState(prevState => {
+                        let updated = [...prevState.selectedLocations]
+                        if (checked) {
+                          updated.push(value)
+                        } else {
+                          updated = updated.filter(item => item !== value)
+                        }
+                        return {selectedLocations: updated}
+                      }, this.fetchDetails)
+                    }}
+                  />
+                  <label
+                    htmlFor={each.locationId}
+                    className="location-filter-label"
+                  >
+                    {each.label}
+                  </label>
+                </li>
+              ))}
+            </ul>
           </div>
           <div className="seach-container">
             <div className="search-data">

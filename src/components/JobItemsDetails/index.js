@@ -46,6 +46,7 @@ class JobItemsDetails extends Component {
         companyWebsiteUrl: data.job_details.company_website_url,
         employmentType: data.job_details.employment_type,
         id: data.job_details.id,
+        title: data.job_details.title,
         jobDescription: data.job_details.job_description,
         location: data.job_details.location,
         packagePerAnnum: data.job_details.package_per_annum,

@@ -15,7 +15,20 @@
   flex-direction: column;
   width: 21vw;
   margin-right: 15px;
+
+  /* Sticky behavior */
+  position: sticky;
+  top: 90px;
+
+  /* REMOVE height: fit-content → this causes the cut */
+  height: auto;
+
+  /* Allow sidebar to show full content and scroll */
+  max-height: calc(100vh - 90px);
+  overflow-y: auto;
 }
+
+
 .seach-container {
   display: flex;
   flex-direction: column;
@@ -143,4 +156,42 @@
 }
 .id-link {
   text-decoration: none;
+}
+
+/* Location Filter Heading */
+.location-filter-heading {
+  color: #fff;
+  font-size: 18px;
+  font-family: 'Roboto';
+  font-weight: 500;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* UL Container */
+.location-container {
+  list-style-type: none;
+  padding-left: 0px;
+  margin-top: 10px;
+}
+
+/* Each list item */
+.location-list {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+/* Checkbox input */
+.location-filter-input {
+  width: 16px;
+  height: 16px;
+  margin-right: 12px;
+}
+
+/* Label text */
+.location-filter-label {
+  color: #f8fafc;
+  font-size: 15px;
+  font-family: 'Roboto';
 }

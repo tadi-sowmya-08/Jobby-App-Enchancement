@@ -11,7 +11,7 @@ const status = {
 }
 
 class Profile extends Component {
-  state = {profileDetails: '', apiStatus: status.initial}
+  state = {profileDetails: {}, apiStatus: status.initial}
 
   componentDidMount() {
     this.getDetails()
@@ -28,13 +28,16 @@ class Profile extends Component {
       },
     }
     const response = await fetch(url, options)
-    const data = await response.json()
-    const updateData = {
-      name: data.profile_details.name,
-      profileImageUrl: data.profile_details.profile_image_url,
-      shortBio: data.profile_details.short_bio,
-    }
+
     if (response.ok) {
+      const data = await response.json()
+
+      const updateData = {
+        name: data.profile_details.name,
+        profileImageUrl: data.profile_details.profile_image_url,
+        shortBio: data.profile_details.short_bio,
+      }
+
       this.setState({profileDetails: updateData, apiStatus: status.success})
     } else {
       this.setState({apiStatus: status.failure})
